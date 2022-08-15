@@ -16,8 +16,12 @@ function Coverpage({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.appTitle}>mallang!</Text>
-        <Text style={styles.appSubTitle}>구음장애인을 위한{"\n"}음성 인식 서비스</Text>
+        <View style={styles.appTitle}>
+          <Text style={styles.appTitleFont}>mallang!</Text>
+        </View>
+        <View style={styles.appSubTitle}>
+          <Text style={styles.appSubTitleFont}>구음장애인을 위한{"\n"}음성 인식 서비스</Text>
+        </View>
       </View>
       <View style={styles.footer}></View>
     </View>
@@ -40,32 +44,52 @@ const styles = StyleSheet.create({
     footer: {
       position: 'absolute',
       bottom: 0,
-      width: 1080,
-      backgroundColor: '#627BFF',
-      borderBottomWidth: 250,
+      // width: 1080,
+      width: "100%",
+      height: "5%",
+      // borderBottomWidth: 250,
+      borderBottomWidth: "130%",
       borderBottomColor: '#ffffff',
-      borderLeftWidth: 1080,
-      borderLeftColor: 'transparent',
+      // borderLeftWidth: 1080,
+      borderLeftWidth: "400%",
+      borderLeftColor: '#627BFF',
       borderStyle: 'solid'
     },
   
     appTitle: {
-      fontFamily: "CherryBomb",
-      color: '#ffffff',
-      fontSize: 160,
-      width: 750,
-      height: 200,
-      marginLeft: 150,
-      marginTop: 400,
+      position: 'absolute',
+      // fontFamily: "CherryBomb",
+      // width: 750,
+      width: "60%",
+      // height: 200,
+      height: "5%",
+      // marginLeft: 150,
+      marginLeft: "15.5%",
+      // marginTop: 400,
+      marginTop: "35%"
     },
-  
+    
+    appTitleFont: {
+      // fontSize: 160,
+      fontSize: 45,
+      color: '#ffffff',
+    },
+
     appSubTitle: {
-      color: '#ffffff',
-      fontSize: 70,
-      width: 600,
-      height: 400,
-      marginLeft: 150,
+      // width: 600,
+      width: "60%",
+      // height: 400,
+      height: "15%",
+      // marginLeft: 150,
+      marginLeft: "15.5%",
+      marginTop: "50%"
     },
+
+    appSubTitleFont: {
+      // fontSize: 70,
+      fontSize: 20,
+      color: '#ffffff',
+    }
 });
 
 export default Coverpage;
