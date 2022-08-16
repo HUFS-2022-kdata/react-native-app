@@ -19,7 +19,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "y"
+      "bundleIdentifier": "ios.build.example"
     },
     "android": {
       "adaptiveIcon": {

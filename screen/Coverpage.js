@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
   
     appTitle: {
       position: 'absolute',
-      // fontFamily: "CherryBomb",
       // width: 750,
       width: "60%",
       // height: 200,
@@ -71,6 +70,7 @@ const styles = StyleSheet.create({
     
     appTitleFont: {
       // fontSize: 160,
+      // fontFamily: "CherryBomb",
       fontSize: 45,
       color: '#ffffff',
     },
