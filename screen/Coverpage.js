@@ -6,7 +6,7 @@ function Coverpage({navigation}) {
   useEffect(() => {
     let id = setTimeout(() => {
       navigation.navigate("Main")
-    }, 2000);
+    }, 0);
 
     return () => {
       clearTimeout(id);

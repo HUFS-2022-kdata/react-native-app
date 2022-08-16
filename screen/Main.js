@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Text, Button, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { NavigationHelpersContext } from '@react-navigation/native';
 
 function Main({navigation}) {
     return (
@@ -13,7 +14,7 @@ function Main({navigation}) {
                     <FontAwesome style={styles.mic} name="microphone" size={30} color="black" />
                 </Button> */}
                 <TouchableOpacity style={styles.innerCircle}
-                    onPress={() => alert("잘 뜨나요?")}>
+                    onPress={() => navigation.navigate("Result")}>
                     <FontAwesome style={styles.mic} name="microphone" size={30} color="black" />
                 </TouchableOpacity>
             </View>

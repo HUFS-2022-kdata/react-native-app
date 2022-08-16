@@ -2,7 +2,7 @@ import React, { cloneElement } from 'react';
 import AudioRecord from './components/AudioRecord';
 import Coverpage from './screen/Coverpage';
 import Main from './screen/Main';
-// import Resultpage from './screen/Resultpage';
+import Resultpage from './screen/Resultpage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as Font from 'expo-font';
@@ -28,7 +28,7 @@ function App() {
           },})}}>
         <Stack.Screen name="Cover" component={Coverpage} />
         <Stack.Screen name="Main" component={Main} />
-        {/* <Stack.Screen name="Result" component={Resultpage} /> */}
+        <Stack.Screen name="Result" component={Resultpage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

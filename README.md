@@ -12,7 +12,7 @@ npm start
 
 ```
 2022-08-15(월)
-screen에 coverpage.js, main.js 추가
+screen에 Coverpage.js, Main.js 추가
 asset에 CherryBomb 폰트 추가
 ```
 
@@ -22,4 +22,6 @@ expo go에서 정상적으로 동작하지 않음을 확인
 -> 디자인 수정
 
 Coverpage에서 버튼 및 디자인 추가
+
+screen에 Resultpage.js 추가
 ```
