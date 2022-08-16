@@ -15,10 +15,11 @@ function AudioRecord() {
       }); 
       console.log('Starting recording..');
       const { recording } = await Audio.Recording.createAsync(
-         Audio.RecordingOptionsPresets.HIGH_QUALITY
+         Audio.RecordingOptionsPresets 
       );
       setRecording(recording);
       console.log('Recording started');
+      count = true;
     } catch (err) {
       console.error('Failed to start recording', err);
     }
@@ -30,6 +31,7 @@ function AudioRecord() {
     await recording.stopAndUnloadAsync();
     const uri = recording.getURI(); 
     console.log('Recording stopped and stored at', uri);
+    navigation.navigate("Result");
   }
   
   return (

@@ -24,4 +24,7 @@ expo go에서 정상적으로 동작하지 않음을 확인
 Coverpage에서 버튼 및 디자인 추가
 
 screen에 Resultpage.js 추가
+
+MainAudioRecord.js 추가 및 마이크 버튼 클릭 시 음성 녹음 가능
+
 ```

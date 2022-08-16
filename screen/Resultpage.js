@@ -4,7 +4,7 @@ import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 function Resultpage({navigation}) {
     return(
         <View style={styles.container}>
-            <TouchableOpacity style={styles.titleBox} onPress={() => navigation.navigate("Main")}>
+            <TouchableOpacity style={styles.titleBox} onPress={() => navigation.navigate("MainAudioRecord")}>
                 <Text style={styles.button}>←</Text>
                 <Text style={styles.title}>결과 텍스트</Text>
             </TouchableOpacity>
