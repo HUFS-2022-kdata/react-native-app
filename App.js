@@ -1,6 +1,7 @@
 import React, { cloneElement } from 'react';
 import AudioRecord from './components/AudioRecord';
 import Coverpage from './screen/Coverpage';
+// import MainAudio from './screen/MainAudio';
 import MainAudioRecord from './screen/MainAudioRecord';
 import Resultpage from './screen/Resultpage';
 import { NavigationContainer } from '@react-navigation/native';
@@ -28,6 +29,7 @@ function App() {
           },})}}>
         <Stack.Screen name="Audio" component={AudioRecord} />
         <Stack.Screen name="Cover" component={Coverpage} />
+        {/* <Stack.Screen name="MainAudio" component={MainAudio} /> */}
         <Stack.Screen name="MainAudioRecord" component={MainAudioRecord} />
         <Stack.Screen name="Result" component={Resultpage} />
       </Stack.Navigator>

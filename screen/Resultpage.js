@@ -1,10 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Audio } from 'expo-av'
+import { CommonActions } from '@react-navigation/native';
 
-function Resultpage({navigation}) {
+function Resultpage({navigation, route}) {
+    const sendedData = route.params.URI;
+    console.log("이게 음원파일입니다." + sendedData);
+
     return(
         <View style={styles.container}>
             <TouchableOpacity style={styles.titleBox} onPress={() => navigation.navigate("MainAudioRecord")}>
+            {/* <TouchableOpacity style={styles.titleBox} onPress={() => navigation.dispatch(CommonActions.navigate("MainAudio"))}> */}
                 <Text style={styles.button}>←</Text>
                 <Text style={styles.title}>결과 텍스트</Text>
             </TouchableOpacity>

@@ -6,7 +6,8 @@ function Coverpage({navigation}) {
   useEffect(() => {
     let id = setTimeout(() => {
       navigation.navigate("MainAudioRecord")
-    }, 5000);
+      // navigation.navigate("MainAudio")
+    }, 2000);
 
     return () => {
       clearTimeout(id);
