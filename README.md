@@ -30,5 +30,7 @@ MainAudioRecord.js 추가 및 마이크 버튼 클릭 시 음성 녹음 가능
 
 ```
 2022-08-17(수)
-Coverpage에 버튼 및 텍스트에 효과 추가
+Coverpage.js에 버튼 및 텍스트에 효과 추가
+
+MainAudioRecord.js에서 recording option 수정
 ```
