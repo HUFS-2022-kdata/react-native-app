@@ -14,7 +14,7 @@ function MainAudioRecord({navigation}) {
       Animated.loop(
         Animated.sequence([
           Animated.timing(fadeAnim, {
-            toValue: 0.5,
+            toValue: 0.3,
             duration: 800,
             useNativeDriver: true,
           }),
@@ -43,7 +43,7 @@ function MainAudioRecord({navigation}) {
       }); 
       console.log('Starting recording..');
       const { recording } = await Audio.Recording.createAsync(
-         Audio.RecordingOptionsPresets 
+        Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY
       );
       setRecording(recording);
       console.log('Recording started');

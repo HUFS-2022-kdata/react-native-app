@@ -7,7 +7,7 @@ function Coverpage({navigation}) {
     let id = setTimeout(() => {
       navigation.navigate("MainAudioRecord")
       // navigation.navigate("MainAudio")
-    }, 2000);
+    }, 3000);
 
     return () => {
       clearTimeout(id);
