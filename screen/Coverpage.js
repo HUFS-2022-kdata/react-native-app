@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import { View, StyleSheet, Text } from 'react-native';
+import AppLoding from 'expo-app-loading';
 
 function Coverpage({navigation}) {
 
   useEffect(() => {
     let id = setTimeout(() => {
       navigation.navigate("MainAudioRecord")
-      // navigation.navigate("MainAudio")
     }, 3000);
 
     return () => {
@@ -62,16 +62,16 @@ const styles = StyleSheet.create({
       // width: 750,
       width: "60%",
       // height: 200,
-      height: "5%",
+      height: "15%",
       // marginLeft: 150,
       marginLeft: "15.5%",
       // marginTop: 400,
-      marginTop: "35%"
+      marginTop: "40%"
     },
     
     appTitleFont: {
       // fontSize: 160,
-      // fontFamily: "CherryBomb",
+      fontFamily: "CherryBomb",
       fontSize: 45,
       color: '#ffffff',
     },
@@ -80,10 +80,10 @@ const styles = StyleSheet.create({
       // width: 600,
       width: "60%",
       // height: 400,
-      height: "15%",
+      height: "10%",
       // marginLeft: 150,
       marginLeft: "15.5%",
-      marginTop: "50%"
+      marginTop: "55%"
     },
 
     appSubTitleFont: {

@@ -27,7 +27,9 @@
     "react-native-screens": "~3.11.1",
     "react-native-svg": "12.3.0",
     "react-native-web": "0.17.7",
-    "route": "^0.2.5"
+    "route": "^0.2.5",
+    "expo-app-loading": "~2.0.0",
+    "expo-splash-screen": "~0.15.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

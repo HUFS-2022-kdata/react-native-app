@@ -10,7 +10,6 @@ function Resultpage({navigation, route}) {
     return(
         <View style={styles.container}>
             <TouchableOpacity style={styles.titleBox} onPress={() => navigation.navigate("MainAudioRecord")}>
-            {/* <TouchableOpacity style={styles.titleBox} onPress={() => navigation.dispatch(CommonActions.navigate("MainAudio"))}> */}
                 <Text style={styles.button}>←</Text>
                 <Text style={styles.title}>결과 텍스트</Text>
             </TouchableOpacity>
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     },
 
     textBox: {
-        marginTop: "40%"
+        marginTop: "45%"
     },
 
     outText: {

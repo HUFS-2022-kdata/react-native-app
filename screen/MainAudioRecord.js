@@ -15,12 +15,12 @@ function MainAudioRecord({navigation}) {
         Animated.sequence([
           Animated.timing(fadeAnim, {
             toValue: 0.3,
-            duration: 800,
+            duration: 750,
             useNativeDriver: true,
           }),
           Animated.timing(fadeAnim, {
-            toValue: 1,
-            duration: 800,
+            toValue: 0.9,
+            duration: 750,
             useNativeDriver: true,
           })
         ])
