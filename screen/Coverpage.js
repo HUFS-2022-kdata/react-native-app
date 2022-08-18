@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
       // width: 750,
       width: "60%",
       // height: 200,
-      height: "15%",
+      height: "30%",
       // marginLeft: 150,
       marginLeft: "15.5%",
       // marginTop: 400,

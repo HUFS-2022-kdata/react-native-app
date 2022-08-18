@@ -1,12 +1,15 @@
-import React, { Component, useEffect } from 'react'
+import React, { Component, useState } from 'react'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Audio } from 'expo-av'
 import { CommonActions } from '@react-navigation/native';
+import * as Speech from 'expo-speech';
 
 function Resultpage({navigation, route}) {
     const sendedData = route.params.URI;
     console.log("이게 음원파일입니다." + sendedData);
 
+    const thingToSay = '텍스트를 눌러 들어보세요.';
+    
     return(
         <View style={styles.container}>
             <TouchableOpacity style={styles.titleBox} onPress={() => navigation.navigate("MainAudioRecord")}>
@@ -14,7 +17,9 @@ function Resultpage({navigation, route}) {
                 <Text style={styles.title}>결과 텍스트</Text>
             </TouchableOpacity>
             <View style={styles.textBox}>
-                <Text style={styles.outText}>여기에 텍스트가 출력될 거에요.</Text>
+                <TouchableOpacity style={styles.speakBox} onPress={() => Speech.speak(thingToSay)}>
+                    <Text style={styles.outText}>텍스트를 눌러 들어보세요.</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -61,6 +66,10 @@ const styles = StyleSheet.create({
     outText: {
         fontSize: 20
     }
+
+    // speakBox: {
+        
+    // }
 })
 
 

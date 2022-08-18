@@ -33,4 +33,6 @@ MainAudioRecord.js 추가 및 마이크 버튼 클릭 시 음성 녹음 가능
 Coverpage.js에 버튼 및 텍스트에 효과, 폰트 추가
 
 MainAudioRecord.js에서 recording option 수정
+
+Resultpage에서 tts 기능 추가
 ```
