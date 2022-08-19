@@ -18,7 +18,8 @@ function Resultpage({navigation, route}) {
             </TouchableOpacity>
             <View style={styles.textBox}>
                 <TouchableOpacity style={styles.speakBox} onPress={() => Speech.speak(thingToSay)}>
-                    <Text style={styles.outText}>텍스트를 눌러 들어보세요.</Text>
+                    {/* <Text style={styles.outText}>텍스트를 눌러 들어보세요.</Text> */}
+                    <Text style={styles.outText}>{thingToSay}</Text>
                 </TouchableOpacity>
             </View>
         </View>
