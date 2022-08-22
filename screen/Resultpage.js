@@ -1,15 +1,18 @@
-import React, { Component, useState } from 'react'
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React, { Component, useEffect, useState } from 'react'
+import { View, StyleSheet, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { Audio } from 'expo-av'
 import { CommonActions } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
 
 function Resultpage({navigation, route}) {
     const sendedData = route.params.URI;
-    console.log("이게 음원파일입니다." + sendedData);
+    // console.log("이게 음원파일입니다." + sendedData);
+    const [ thingToSay, setThingToSay ] = useState("텍스트를 눌러 들어보세요.");
 
-    const thingToSay = '텍스트를 눌러 들어보세요.';
-    
+    useEffect(() => {
+        setThingToSay();
+    }, []);
+
     return(
         <View style={styles.container}>
             <TouchableOpacity style={styles.titleBox} onPress={() => navigation.navigate("MainAudioRecord")}>
@@ -18,8 +21,11 @@ function Resultpage({navigation, route}) {
             </TouchableOpacity>
             <View style={styles.textBox}>
                 <TouchableOpacity style={styles.speakBox} onPress={() => Speech.speak(thingToSay)}>
-                    {/* <Text style={styles.outText}>텍스트를 눌러 들어보세요.</Text> */}
-                    <Text style={styles.outText}>{thingToSay}</Text>
+                    {thingToSay === undefined ? (
+                        <ActivityIndicator size="large" />
+                    ) : (
+                        <Text style={styles.outText}>{thingToSay}</Text>
+                    )}
                 </TouchableOpacity>
             </View>
         </View>

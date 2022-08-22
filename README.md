@@ -36,3 +36,8 @@ MainAudioRecord.js에서 recording option 수정
 
 Resultpage에서 tts 기능 추가
 ```
+
+```
+2022-08-22(월)
+MainAudioRecord.js에 flask 서버로 audio 파일 전송기능 포함
+```

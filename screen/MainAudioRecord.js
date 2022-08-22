@@ -2,6 +2,7 @@ import React, { Component, useEffect, useRef, useState } from 'react'
 import { Animated, View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { Audio } from 'expo-av'
+import axios from 'axios'
 
 function MainAudioRecord({navigation}) {
   const [recording, setRecording] = React.useState();
@@ -57,9 +58,48 @@ function MainAudioRecord({navigation}) {
     console.log('Stopping recording..');
     setRecording(undefined);
     await recording.stopAndUnloadAsync();
+    // console.log(recording)
     const uri = recording.getURI(); 
-    console.log('Recording stopped and stored at', uri);
+    // console.log('Recording stopped and stored at', uri);
+
+    const uploadAudio = async () => {
+      
+      const filename = uri.split('/').pop()
+      let formData = new FormData()
+      formData.append('file', {
+        uri : uri,
+        name : filename,
+        type : 'audio/m4a'
+      })
+      let options = {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accpet: "application/json",
+          "Content-Type": "multipart/form-data"
+        }
+      }
+      await fetch('http://127.0.0.1:5000/upload',options)
+
+      // await axios.post({
+      //   method: 'post',
+      //   headers: {
+      //     Accept: "application/json",
+      //     "Content-Type" : "multipart/form-data"
+      //   },
+      //   // transformRequest: formData => formData,
+      //   url: 'http://127.0.0.1:5000/upload',
+      //   body: formData
+      // }).then(function(response) {
+      //   console.log(response);
+      // }).catch(function(error) {
+      //   console.log(error);
+      // });
+      
+    }
+
     navigation.navigate("Result", {URI:uri});
+    uploadAudio();
     FadeInOutView(false)
   }
 
