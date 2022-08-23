@@ -7,6 +7,7 @@ import * as Speech from 'expo-speech';
 function Resultpage({navigation, route}) {
     const sendedData = route.params.URI;
     // console.log("이게 음원파일입니다." + sendedData);
+    // const [ thingToSay, setThingToSay ] = useState("텍스트를 눌러 들어보세요.");
     const [ thingToSay, setThingToSay ] = useState("텍스트를 눌러 들어보세요.");
 
     const uploadAudio = async () => {
@@ -26,13 +27,16 @@ function Resultpage({navigation, route}) {
           "Content-Type": "multipart/form-data"
         }
       }
-    // in localhost env
-    //   await fetch('http://127.0.0.1:5000:5000/upload',options)
-    // in mobile env
+        // // in localhost env
+        // await fetch('http://127.0.0.1:5000:5000/upload',options)
+        // in mobile env
         await fetch('http://192.168.0.51:5000/upload',options)
-        .then(function(response) {
-          console.log(response);
-        }).catch(function(error) {
+        .then((response) => response.json())
+        .then((json) => {
+            setThingToSay(json['text'])
+            console.log(json['text'])
+        })
+        .catch((error) => {
           console.log(error);
         });
 
@@ -54,10 +58,8 @@ function Resultpage({navigation, route}) {
     }
 
     useEffect(() => {
-        const ula = uploadAudio()
-        console.log(ula)
-        setThingToSay("영해는 잘 잤니? 밥까지 먹고 왔다고?");
-    }, []);
+        uploadAudio()
+    });
 
     return(
         <View style={styles.container}>

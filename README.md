@@ -46,4 +46,5 @@ MainAudioRecord.js에 flask 서버로 audio 파일 전송기능 포함
 2022-08-23(화)
 MainAudioRecord.js에서 Resultpage.js로 서버에 audio 파일 전송변경
 모바일 환경에서의 음성파일 전송 포함 및 로컬 환경에서의 음성파일 전송
+최종 완성
 ```
