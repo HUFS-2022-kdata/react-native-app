@@ -8,7 +8,7 @@ function Resultpage({navigation, route}) {
     const sendedData = route.params.URI;
     // console.log("이게 음원파일입니다." + sendedData);
     // const [ thingToSay, setThingToSay ] = useState("텍스트를 눌러 들어보세요.");
-    const [ thingToSay, setThingToSay ] = useState("텍스트를 눌러 들어보세요.");
+    const [ thingToSay, setThingToSay ] = useState(undefined);
 
     const uploadAudio = async () => {
       
