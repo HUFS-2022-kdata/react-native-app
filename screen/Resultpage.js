@@ -9,8 +9,54 @@ function Resultpage({navigation, route}) {
     // console.log("이게 음원파일입니다." + sendedData);
     const [ thingToSay, setThingToSay ] = useState("텍스트를 눌러 들어보세요.");
 
+    const uploadAudio = async () => {
+      
+      const filename = sendedData.split('/').pop()
+      let formData = new FormData()
+      formData.append('file', {
+        uri : sendedData,
+        name : filename,
+        type : 'audio/m4a'
+      })
+      let options = {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accpet: "application/json",
+          "Content-Type": "multipart/form-data"
+        }
+      }
+    // in localhost env
+    //   await fetch('http://127.0.0.1:5000:5000/upload',options)
+    // in mobile env
+        await fetch('http://192.168.0.51:5000/upload',options)
+        .then(function(response) {
+          console.log(response);
+        }).catch(function(error) {
+          console.log(error);
+        });
+
+      // await axios.post({
+      //   method: 'post',
+      //   headers: {
+      //     Accept: "application/json",
+      //     "Content-Type" : "multipart/form-data"
+      //   },
+      //   // transformRequest: formData => formData,
+      //   url: 'http://127.0.0.1:5000/upload',
+      //   body: formData
+      // }).then(function(response) {
+      //   console.log(response);
+      // }).catch(function(error) {
+      //   console.log(error);
+      // });
+      
+    }
+
     useEffect(() => {
-        setThingToSay();
+        const ula = uploadAudio()
+        console.log(ula)
+        setThingToSay("영해는 잘 잤니? 밥까지 먹고 왔다고?");
     }, []);
 
     return(
@@ -39,6 +85,7 @@ const styles = StyleSheet.create({
     },
 
     titleBox: {
+        flex: 1,
         flexDirection: 'row',
         backgroundColor: "#627BFF",
         // width: 950,
@@ -67,6 +114,8 @@ const styles = StyleSheet.create({
     },
 
     textBox: {
+        flex: 16,
+        paddingHorizontal: "13%",
         marginTop: "45%"
     },
 
@@ -74,9 +123,6 @@ const styles = StyleSheet.create({
         fontSize: 20
     }
 
-    // speakBox: {
-        
-    // }
 })
 
 
