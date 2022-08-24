@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react'
-import { View, StyleSheet, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, ActivityIndicator, NativeModules } from 'react-native';
 import { Audio } from 'expo-av'
 import { CommonActions } from '@react-navigation/native';
 import * as Speech from 'expo-speech';
@@ -7,8 +7,14 @@ import * as Speech from 'expo-speech';
 function Resultpage({navigation, route}) {
     const sendedData = route.params.URI;
     // console.log("이게 음원파일입니다." + sendedData);
-    // const [ thingToSay, setThingToSay ] = useState("텍스트를 눌러 들어보세요.");
     const [ thingToSay, setThingToSay ] = useState(undefined);
+
+    const getDevServerAddress = () => {
+        const scriptURL = NativeModules.SourceCode.scriptURL;
+        const address = scriptURL.split('://')[1].split('/')[0];
+        const hostname = address.split(':')[0];
+        return hostname;
+    };
 
     const uploadAudio = async () => {
       
@@ -30,7 +36,7 @@ function Resultpage({navigation, route}) {
         // // in localhost env
         // await fetch('http://127.0.0.1:5000:5000/upload',options)
         // in mobile env
-        await fetch('http://192.168.0.51:5000/upload',options)
+        await fetch('http://'+getDevServerAddress()+':5000/upload',options)
         .then((response) => response.json())
         .then((json) => {
             setThingToSay(json['text'])
