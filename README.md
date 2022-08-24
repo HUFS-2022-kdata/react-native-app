@@ -48,3 +48,8 @@ MainAudioRecord.js에서 Resultpage.js로 서버에 audio 파일 전송변경
 모바일 환경에서의 음성파일 전송 포함 및 로컬 환경에서의 음성파일 전송
 최종 완성
 ```
+
+```
+2022-08-24(수)
+Resultpage.js에 서버 읽어올 때 ip 주소 자동 동기화 추가
+```
